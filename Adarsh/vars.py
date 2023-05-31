@@ -12,7 +12,7 @@ class Var(object):
     API_ID = int(getenv("API_ID"))
     API_HASH = str(getenv("API_HASH"))
     BOT_TOKEN = str(getenv("BOT_TOKEN"))
-    name = str(getenv("name", "filetolinkbot"))
+    name = str(getenv("name", "mplaylinkstream"))
     SLEEP_THRESHOLD = int(getenv("SLEEP_THRESHOLD", "60"))
     WORKERS = int(getenv("WORKERS", "4"))
     BIN_CHANNEL = int(getenv("BIN_CHANNEL"))
@@ -41,4 +41,4 @@ class Var(object):
     BANNED_CHANNELS = list(
         {int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split()}
     )
-    BOT_USERNAME = str(getenv("BOT_USERNAME", "filetolinkbot"))
+    BOT_USERNAME = str(getenv("BOT_USERNAME", "mplaylinkstream"))
