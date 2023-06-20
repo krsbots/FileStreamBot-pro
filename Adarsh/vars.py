@@ -9,7 +9,7 @@ load_dotenv()
 
 class Var(object):
     MULTI_CLIENT = False
-    API_ID = int(getenv("API_ID" "20804756")
+    API_ID = int(getenv("API_ID" "20804756"))
     API_HASH = str(getenv("API_HASH" "ecd0e2a4cc383ae5717059e7ae120adb"))
     BOT_TOKEN = str(getenv("BOT_TOKEN" "6136516898:AAHUuHh4mUhAuLEWYnB7NdqMa9JszHMFBJQ"))
     name = str(getenv("name", "mplaylinkstream"))
