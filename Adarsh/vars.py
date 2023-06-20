@@ -25,7 +25,7 @@ class Var(object):
     OWNER_USERNAME = str(getenv("OWNER_USERNAME" "MPlaylink_Team"))
     if "DYNO" in environ:
         ON_HEROKU = True
-        APP_NAME = str(getenv("APP_NAME" "mplaylin"))
+        APP_NAME = str(getenv("APP_NAME" "m2n3b4v5c6x7z"))
 
     else:
         ON_HEROKU = False
