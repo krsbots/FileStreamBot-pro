@@ -9,10 +9,10 @@ load_dotenv()
 
 class Var(object):
     MULTI_CLIENT = False
-    API_ID = int(getenv("API_ID" "20804756"))
+    API_ID = int(getenv("API_ID", "20804756"))
     API_HASH = str(getenv("API_HASH" "ecd0e2a4cc383ae5717059e7ae120adb"))
     BOT_TOKEN = str(getenv("BOT_TOKEN" "6136516898:AAHUuHh4mUhAuLEWYnB7NdqMa9JszHMFBJQ"))
-    name = str(getenv("name", "mplaylinkstream"))
+    name = str(getenv("name", "m2n3b4v5c6x7z"))
     SLEEP_THRESHOLD = int(getenv("SLEEP_THRESHOLD", "60"))
     WORKERS = int(getenv("WORKERS", "4"))
     BIN_CHANNEL = int(getenv("BIN_CHANNEL" "-1001949163175"))
@@ -41,4 +41,4 @@ class Var(object):
     BANNED_CHANNELS = list(
         {int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split()}
     )
-    BOT_USERNAME = str(getenv("BOT_USERNAME", "mplaylinkstream"))
+    BOT_USERNAME = str(getenv("BOT_USERNAME", "MPlaylink_Streaming_Bot"))
