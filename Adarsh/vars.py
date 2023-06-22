@@ -25,14 +25,14 @@ class Var(object):
     OWNER_USERNAME = str(getenv("OWNER_USERNAME" "chill_yaaaar"))
     if "DYNO" in environ:
         ON_HEROKU = True
-        APP_NAME = str(getenv("APP_NAME" "m2n3b4v5c6x7z"))
+        APP_NAME = str(getenv("APP_NAME" "mplaystreamstream"))
 
     else:
         ON_HEROKU = False
     FQDN = (
         str(getenv("FQDN", BIND_ADRESS))
         if not ON_HEROKU or getenv("FQDN")
-        else f"{APP_NAME}.herokuapp.com"
+        else f"{mplaystreamstream}.herokuapp.com"
     )
     HAS_SSL = bool(getenv("HAS_SSL", False))
     URL = f"https://{FQDN}/" if HAS_SSL else f"http://{FQDN}/"
