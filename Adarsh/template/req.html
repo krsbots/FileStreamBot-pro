@@ -396,15 +396,19 @@
             <div class="con1">
               <div id="link-content" class="link_content">
                 <div class="button-area-line">
-                  <a id="demo2" href="intent:{{file_url}}#Intent;package=com.mxtech.videoplayer.ad;S.title={{file_name}};end" class="block">
+                  <a id="demo2" onclick="showLinkModal('intent:{{file_url}}#Intent;package=com.mxtech.videoplayer.ad;S.title={{file_name}};end')" class="block">
                     <i class="fa fa-play"></i> Stream MX </a>
-                  <a id="demo1" href="vlc://{{file_url}}" class="block">
+                  <a id="demo1" onclick="showLinkModal('vlc://{{file_url}}')" class="block">
                     <i class="fa fa-play"></i> Stream VLC </a>
-                  <a id="demo2" href="playit://playerv2/video?url={{file_url}}?hash=AgADuQ&amp;title={{file_name}}" class="block">
+                  <a id="demo2" onclick="showLinkModal('playit://playerv2/video?url={{file_url}}?hash=AgADuQ&amp;title={{file_name}}')" class="block">
                     <i class="fa fa-play"></i> Stream Playit </a>
                 </div>
-                <a id="demo3" onclick="showLinkModal('{{file_url}}')" class="block">
-                  <i class="fa fa-download"></i> Download File (open in New Tab) </a>
+                <a id="demo3" onclick="showLinkModal('{{file_store_link}}')" class="block">
+                  <i class="fa fa-download"></i> Get Telegram File </a>
+
+                  <a id="demo3" onclick="showLinkModal('{{file_url}}')" class="block">
+                    <i class="fa fa-download"></i> Download File (open in New Tab) </a>
+                    
               </div>
               <div id="link-modal" class="modal">
                 <div class="modal-content">
@@ -416,10 +420,8 @@
                 </div>
               </div>
               <div class="alert">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
-                <strong>Notice!</strong> Video Not Playing or Sound not comes? <a href="#C4" style="color: darkorange">
-                  <b>Get Help</b>
-                </a>
+                <a href="https://telegram.me/Md_Matin_Ashraf"><u>Report File ID</u> : </a>
+        <span style="color: #f78400">{{file_unique_id}}</span></strong>
               </div>
               <!-- partial -->
               <p>

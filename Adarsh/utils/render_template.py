@@ -11,6 +11,7 @@ import aiohttp
 
 
 async def render_page(id, secure_hash, src=None):
+    file = await StreamBot.get_messages(int(Var.BIN_CHANNEL), int(id))
     file_data = await get_file_ids(StreamBot, int(Var.BIN_CHANNEL), int(id))
     if file_data.unique_id[:6] != secure_hash:
         logging.debug(f"link hash: {secure_hash} - {file_data.unique_id[:6]}")
@@ -36,9 +37,15 @@ async def render_page(id, secure_hash, src=None):
         template = jinja2.Template(f.read())
 
     file_name = file_data.file_name.replace("_", " ")
+
+    file_store_link = (
+        f"https://telegram.me/{Var.FILE_STORE_BOT_USERNAME}?start=download_{file.id}"
+    )
     return template.render(
         file_name=file_name,
         file_url=src,
         file_size=file_size,
+        file_unique_id=file_data.unique_id,
         bot_usename=Var.BOT_USERNAME,
+        file_store_link=file_store_link,
     )
