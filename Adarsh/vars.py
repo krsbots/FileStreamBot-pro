@@ -22,10 +22,10 @@ class Var(object):
     OWNER_ID = {int(x) for x in os.environ.get("OWNER_ID", "5297391576").split()}
     NO_PORT = bool(getenv("NO_PORT", False))
     APP_NAME = None
-    OWNER_USERNAME = str(getenv("OWNER_USERNAME" "chill_yaaaar"))
+    OWNER_USERNAME = str(getenv("OWNER_USERNAME", "chill_yaaaar"))
     if "DYNO" in environ:
         ON_HEROKU = True
-        APP_NAME = str(getenv("APP_NAME" "mplaystreamstream"))
+        APP_NAME = str(getenv("APP_NAME", "mplaystreamstream"))
 
     else:
         ON_HEROKU = False
@@ -36,7 +36,7 @@ class Var(object):
     )
     HAS_SSL = bool(getenv("HAS_SSL", False))
     URL = f"https://{FQDN}/" if HAS_SSL else f"http://{FQDN}/"
-    DATABASE_URL = str(getenv("DATABASE_URL" "mongodb+srv://MdMatin:x7bdggKJ9zb9JSK@cluster0.89bzvjn.mongodb.net/?retryWrites=true&w=majority"))
+    DATABASE_URL = str(getenv("DATABASE_URL", "mongodb+srv://MdMatin:x7bdggKJ9zb9JSK@cluster0.89bzvjn.mongodb.net/?retryWrites=true&w=majority"))
     UPDATES_CHANNEL = str(getenv("UPDATES_CHANNEL", None))
     BANNED_CHANNELS = list(
         {int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split()}
