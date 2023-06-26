@@ -5,7 +5,6 @@ from Adarsh.utils.human_readable import humanbytes
 from Adarsh.utils.file_properties import get_file_ids
 from Adarsh.server.exceptions import InvalidHash
 import urllib.parse
-import aiofiles
 import logging
 import aiohttp
 
