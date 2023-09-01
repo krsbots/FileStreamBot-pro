@@ -25,7 +25,7 @@ class Var(object):
     OWNER_USERNAME = str(getenv("OWNER_USERNAME", "chill_yaaaar"))
     if "DYNO" in environ:
         ON_HEROKU = True
-        APP_NAME = str(getenv("APP_NAME", "filestreampromplaylink"))
+        APP_NAME = str(getenv("APP_NAME", "moneystorage"))
 
     else:
         ON_HEROKU = False
