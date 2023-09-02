@@ -11,21 +11,21 @@ class Var(object):
     MULTI_CLIENT = False
     API_ID = int(getenv("API_ID", "21407623"))
     API_HASH = str(getenv("API_HASH", "71526961879d5d662ec9307fe850da90"))
-    BOT_TOKEN = str(getenv("BOT_TOKEN","6136516898:AAFoiy-XM8w7RhhIvLLA6qWOjzIsIsl_h8c"))
+    BOT_TOKEN = str(getenv("BOT_TOKEN","6171238258:AAEYOhFc9lfpZFoIgewvOWeZ4sSBbxBTrzE"))
     name = str(getenv("name", "File-To-Link"))
     SLEEP_THRESHOLD = int(getenv("SLEEP_THRESHOLD", "60"))
     WORKERS = int(getenv("WORKERS", "4"))
-    BIN_CHANNEL = int(getenv("BIN_CHANNEL", "-1001949163175"))
+    BIN_CHANNEL = int(getenv("BIN_CHANNEL", "-1001929879181)
     PORT = int(getenv("PORT", 8080))
     BIND_ADRESS = str(getenv("WEB_SERVER_BIND_ADDRESS", "0.0.0.0"))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
-    OWNER_ID = {int(x) for x in os.environ.get("OWNER_ID", "5297391576").split()}
+    OWNER_ID = {int(x) for x in os.environ.get("OWNER_ID", "1366099058").split()}
     NO_PORT = bool(getenv("NO_PORT", False))
     APP_NAME = None
-    OWNER_USERNAME = str(getenv("OWNER_USERNAME", "chill_yaaaar"))
+    OWNER_USERNAME = str(getenv("OWNER_USERNAME", "Infokeeda"))
     if "DYNO" in environ:
         ON_HEROKU = True
-        APP_NAME = str(getenv("APP_NAME", "moneystorage"))
+        APP_NAME = str(getenv("APP_NAME", "moneycasefilestream"))
 
     else:
         ON_HEROKU = False
