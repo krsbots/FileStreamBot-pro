@@ -41,5 +41,5 @@ class Var(object):
     BANNED_CHANNELS = list(
         {int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split()}
     )
-    BOT_USERNAME = str(getenv("BOT_USERNAME", "MPlaylink_Stream_Bot"))
-    FILE_STORE_BOT_USERNAME = str(getenv("FILE_STORE_BOT_USERNAME", "MPlaylink_Destination_Bot"))
+    BOT_USERNAME = str(getenv("BOT_USERNAME", "moneycase_filestream_bot"))
+    FILE_STORE_BOT_USERNAME = str(getenv("FILE_STORE_BOT_USERNAME", "moneycase_store_file_bot"))
