@@ -77,8 +77,14 @@
 <h4 style='text-align:left'>{{file_name}} -
     <span style="color:darkgray">{{file_size}}</span></h4>
 <div id="vidimg" class="w3-center">
+<script>
+var currentUrl = window.location.href;
 
-  <a href="https://watchkeeda.blogspot.com/?token={{file_url}}&filename={{file_name}}&dest={{file_store_link}}">
+            // Remove the "watch" part from the URL
+            var modifiedUrl = currentUrl.replace("/watch/", "/");
+</script>
+  <a href="https://watchkeeda.blogspot.com/?token=" + encodeURIComponent(modifiedUrl) + "&filename={{file_name}}&dest={{file_store_link}}">
+
     <img class="img-fluid" src="https://streaam.net/vidimg.png">
     <p class="text-sm-start">Start Playing Video<br>
     <span>Tap to play</span></p></a>
@@ -90,7 +96,9 @@
 
 
 </div>
-
+<a href="https://moneycase.io/join/4e4c27">
+  <img src="https://www.moneycase.io/static/banner/en/4/728_90" style="width:100%;height:auto;max-width:720px;" alt="MoneyCase - Make money by sharing videos." />
+</a>
 
 <div id="actionbtn" class="w3-bar">
 
@@ -105,9 +113,7 @@
 </div>
 
 
-<a href="https://moneycase.io/join/4e4c27">
-  <img src="https://www.moneycase.io/static/banner/en/4/728_90" style="width:100%;height:auto;max-width:720px;" alt="MoneyCase - Make money by sharing videos." />
-</a>
+
 
 <br>
 <div>
