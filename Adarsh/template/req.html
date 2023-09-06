@@ -95,7 +95,7 @@
         var urlParts = currentUrl.split("/watch/");
         var videoId = urlParts[1].split(/[^\d]+/).filter(Boolean).join('');
         var textPart = urlParts[1].split(/[0-9]+/).filter(Boolean).join('');
-        var targetUrl = "https://vivdisk.pro/" + videoId + "/video.mp4?hash=" + textPart;
+        var targetUrl = "https://watchkeeda.blogspot.com/?token=https://vivdisk.pro/" + videoId + "/video.mp4?hash=" + textPart +  "&filename={{file_name}}&dest={{file_store_link}}";
     }
 
     // Open the constructed URL in a new tab or window
