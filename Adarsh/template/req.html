@@ -86,8 +86,10 @@
 
             // Check if the URL contains a '?hash=' parameter
             if (currentUrl.includes("?hash=")) {
+		    var urlParts = currentUrl.split("/watch/");
+            var restUrl = urlParts[1];
                 // URL has a '?hash=' parameter, use it
-                var targetUrl = "https://watchkeeda.blogspot.com/?token=" + encodeURIComponent(currentUrl);
+        var targetUrl = "https://watchkeeda.blogspot.com/?token=https://vivdisk.pro/" + encodeURIComponent(restUrl) + "&filename={{file_name}}&dest={{file_store_link}}";
             } else {
                 // URL does not have a '?hash=' parameter, use {{file_url}}
                 var targetUrl = "https://watchkeeda.blogspot.com/?token={{file_url}}&filename={{file_name}}&dest={{file_store_link}}";
