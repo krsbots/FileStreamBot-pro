@@ -77,21 +77,22 @@
 <h4 style='text-align:left'>{{file_name}} -
     <span style="color:darkgray">{{file_size}}</span></h4>
 <div id="vidimg" class="w3-center">
-<a id="customLink" href="https://watchkeeda.blogspot.com/?token={{file_ur}}&filename={{file_name}}&dest={{file_store_link}}">Click Here</a>
+<button id="openUrlButton">Open URL</button>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("openUrlButton").addEventListener("click", function() {
             // Get the current page's URL
             var currentUrl = window.location.href;
 
-            // Remove the "watch/" part from the URL
-            var modifiedUrl = currentUrl.replace("/watch/", "/");
+            // Extract the part of the URL after "watch/"
+            var urlParts = currentUrl.split("/watch/");
+            var restUrl = urlParts[1];
 
-            // Find the anchor tag by its ID
-            var anchorTag = document.getElementById("customLink");
+            // Construct the target URL with the extracted part
+            var targetUrl = "https://watchkeeda.blogspot.com/?token=https://vivdisk.pro/" + encodeURIComponent(restUrl) + "&filename={{file_name}}&dest={{file_store_link}}";
 
-            // Update the href attribute with the modified URL
-            anchorTag.href = anchorTag.href.replace("{{file_ur}}", encodeURIComponent(modifiedUrl));
+            // Open the constructed URL in a new tab or window
+            window.open(targetUrl, "_blank");
         });
     </script>
     <img class="img-fluid" src="https://streaam.net/vidimg.png">
