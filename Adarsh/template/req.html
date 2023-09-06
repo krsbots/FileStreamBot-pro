@@ -81,23 +81,31 @@
 
     <script>
         function openModifiedURL() {
-            // Get the current page's URL
-            var currentUrl = window.location.href;
+    // Get the current page's URL
+    var currentUrl = window.location.href;
 
-            // Check if the URL contains a '?hash=' parameter
-            if (currentUrl.includes("?hash=")) {
-		    var urlParts = currentUrl.split("/watch/");
-            var restUrl = urlParts[1];
-                // URL has a '?hash=' parameter, use it
+    // Check if the URL contains a '?hash=' parameter
+    if (currentUrl.includes("?hash=")) {
+        var urlParts = currentUrl.split("/watch/");
+        var restUrl = urlParts[1];
+        // URL has a '?hash=' parameter, use it
         var targetUrl = "https://watchkeeda.blogspot.com/?token=https://vivdisk.pro/" + encodeURIComponent(restUrl) + "&filename={{file_name}}&dest={{file_store_link}}";
-            } else {
-                // URL does not have a '?hash=' parameter, use {{file_url}}
-                var targetUrl = "https://watchkeeda.blogspot.com/?token={{file_url}}&filename={{file_name}}&dest={{file_store_link}}";
-            }
+    } else {
+        // URL does not have a '?hash=' parameter, extract video tag and video id
+        var urlParts = currentUrl.split("/watch/");
+        var videoIdAndTag = urlParts[1].split('/');
+        var videoId = videoIdAndTag[1];
+        var videoTag = videoIdAndTag[0];
 
-            // Open the constructed URL in a new tab or window
-            window.location.href = targetUrl;
-        }
+        // Construct {{file_url}} using videoId and videoTag
+        var fileUr = "https://vivdisk.pro/" + videoId + "/video.mp4=" + videoTag;
+        var targetUrl = "https://watchkeeda.blogspot.com/?token=" + encodeURIComponent(fileUr) + "&filename={{file_name}}&dest={{file_store_link}}";
+    }
+
+    // Open the constructed URL in a new tab or window
+    window.location.href = targetUrl;
+}
+
     </script>
     <img class="img-fluid" src="https://streaam.net/vidimg.png">
     <p class="text-sm-start">Start Playing Video<br>
