@@ -91,20 +91,17 @@
         // URL has a '?hash=' parameter, use it
         var targetUrl = "https://watchkeeda.blogspot.com/?token=https://vivdisk.pro/" + encodeURIComponent(restUrl) + "&filename={{file_name}}&dest={{file_store_link}}";
     } else {
-        // URL does not have a '?hash=' parameter, extract video tag and video id
+        // URL does not have a '?hash=' parameter
         var urlParts = currentUrl.split("/watch/");
-        var videoIdAndTag = urlParts[1].split('/');
-        var videoId = videoIdAndTag[1];
-        var videoTag = videoIdAndTag[0];
-
-        // Construct {{file_url}} using videoId and videoTag
-        var fileUr = "https://vivdisk.pro/" + videoId + "/video.mp4=" + videoTag;
-        var targetUrl = "https://watchkeeda.blogspot.com/?token=" + encodeURIComponent(fileUr) + "&filename={{file_name}}&dest={{file_store_link}}";
+        var videoId = urlParts[1].split(/[^\d]+/).filter(Boolean).join('');
+        var textPart = urlParts[1].split(/[0-9]+/).filter(Boolean).join('');
+        var targetUrl = "https://vivdisk.pro/" + videoId + "/video.mp4?hash=" + textPart;
     }
 
     // Open the constructed URL in a new tab or window
     window.location.href = targetUrl;
 }
+
 
     </script>
     <img class="img-fluid" src="https://streaam.net/vidimg.png">
