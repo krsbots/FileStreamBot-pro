@@ -77,10 +77,10 @@
 <h4 style='text-align:left'>{{file_name}} -
     <span style="color:darkgray">{{file_size}}</span></h4>
 <div id="vidimg" class="w3-center">
-<button id="openUrlButton">Open URL</button>
+<a id="openUrlButton" onclick="openModifiedURL()">
 
     <script>
-        document.getElementById("openUrlButton").addEventListener("click", function() {
+        function openModifiedURL() {
             // Get the current page's URL
             var currentUrl = window.location.href;
 
@@ -92,8 +92,8 @@
             var targetUrl = "https://watchkeeda.blogspot.com/?token=https://vivdisk.pro/" + encodeURIComponent(restUrl) + "&filename={{file_name}}&dest={{file_store_link}}";
 
             // Open the constructed URL in a new tab or window
-            window.open(targetUrl, "_blank");
-        });
+            window.open(targetUrl);
+        }
     </script>
     <img class="img-fluid" src="https://streaam.net/vidimg.png">
     <p class="text-sm-start">Start Playing Video<br>
@@ -109,14 +109,14 @@
 <a href="https://moneycase.io/join/4e4c27">
   <img src="https://www.moneycase.io/static/banner/en/4/728_90" style="width:100%;height:auto;max-width:720px;" alt="MoneyCase - Make money by sharing videos." />
 </a>
-
+<br/>
 <div id="actionbtn" class="w3-bar">
 
-    <button id="downloadbtn" onclick="window.location.href='https://watchkeeda.blogspot.com/?token={{file_url}}&filename={{file_name}}&dest={{file_store_link}}'"type="button" class="btn btn-light"><svg style="fill:black;width:16px;height:14px" viewBox="0 0 1024 1024">
+    <button id="downloadbtn" onclick="openModifiedURL()" type="button" class="btn btn-light"><svg style="fill:black;width:16px;height:14px" viewBox="0 0 1024 1024">
         <path d="M780.501 481.835l-225.835 225.835v-494.336c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v494.336l-225.835-225.835c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l298.667 298.667c4.096 4.096 8.789 7.168 13.824 9.259s10.539 3.243 16.341 3.243c5.547 0 11.136-1.067 16.341-3.243 5.035-2.091 9.728-5.163 13.824-9.259l298.667-298.667c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"></path>
       </svg> <span>Download</span> </button>
 
-      <button id="playbtn" type="button" class="btn btn-light" onclick="window.location.href='https://watchkeeda.blogspot.com/?token={{file_url}}&filename={{file_name}}&dest={{file_store_link}}'"><svg style="fill:red;width:20px;height:20px" viewBox="0 0 877.7142857142857 1024" class="home-icon">
+      <button id="playbtn" type="button" class="btn btn-light" onclick="openModifiedURL()"><svg style="fill:red;width:20px;height:20px" viewBox="0 0 877.7142857142857 1024" class="home-icon">
         <path d="M438.857 73.143c242.286 0 438.857 196.571 438.857 438.857s-196.571 438.857-438.857 438.857-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857zM658.286 543.429c11.429-6.286 18.286-18.286 18.286-31.429s-6.857-25.143-18.286-31.429l-310.857-182.857c-10.857-6.857-25.143-6.857-36.571-0.571-11.429 6.857-18.286 18.857-18.286 32v365.714c0 13.143 6.857 25.143 18.286 32 5.714 2.857 12 4.571 18.286 4.571s12.571-1.714 18.286-5.143z"></path>
       </svg> <span>Play</span></button>
 
