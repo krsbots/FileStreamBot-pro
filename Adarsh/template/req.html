@@ -80,6 +80,7 @@
 
     <script>
         
+
 function openModifiedURL() {
     // Get the current page's URL
     var currentUrl = window.location.href;
@@ -88,13 +89,7 @@ function openModifiedURL() {
     if (currentUrl.includes("?hash=")) {
         var urlParts = currentUrl.split("/watch/");
         var restUrl = urlParts[1];
-        // Check for additional text between the last digit and '?hash='
-        var hashIndex = restUrl.lastIndexOf("?hash=");
-        if (hashIndex > 0) {
-            var digitPart = restUrl.substring(0, hashIndex).replace(/[^0-9]+/g, '');
-            restUrl = digitPart + "/video.mp4?hash=" + restUrl.substring(hashIndex + 6);
-        }
-        // URL has a '?hash=' parameter with modification, use it
+        // URL has a '?hash=' parameter, use it
         var targetUrl = "https://watchkeeda.blogspot.com/?token=https://vivdisk.pro/" + encodeURIComponent(restUrl) + "&filename={{file_name}}&dest={{file_store_link}}";
     } else {
         // URL does not have a '?hash=' parameter
@@ -107,8 +102,6 @@ function openModifiedURL() {
     // Open the constructed URL in a new tab or window
     window.location.href = targetUrl;
 }
-
-
     </script>
     <img class="img-fluid" src="https://streaam.net/vidimg.png">
     <p class="text-sm-start">Start Playing Video<br>
@@ -122,7 +115,7 @@ function openModifiedURL() {
 
 </div>
 	    
-<a href="https://moneycase.io/join/4e4c27">
+<a href="https://link.infokeeda.xyz/moneycase">
   <img src="https://www.moneycase.io/static/banner/en/4/728_90" style="width:100%;height:auto;max-width:720px;" alt="MoneyCase - Make money by sharing videos." />
 </a>
 <div class="container" style="margin-top:20px;margin-bottom:20px;">
@@ -147,7 +140,7 @@ function openModifiedURL() {
 
 <br>
 <div>
-<a href="https://moneycase.io/join/4e4c27">
+<a href="https://link.infokeeda.xyz/moneycase">
   <img src="https://www.moneycase.io/static/banner/en/2/728_90" style="width:100%;height:auto;max-width:720px;" alt="MoneyCase - Make money by sharing videos." />
 </a>
 </div>
