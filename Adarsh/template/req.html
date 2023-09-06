@@ -84,12 +84,14 @@
             // Get the current page's URL
             var currentUrl = window.location.href;
 
-            // Extract the part of the URL after "watch/"
-            var urlParts = currentUrl.split("/watch/");
-            var restUrl = urlParts[1];
-
-            // Construct the target URL with the extracted part
-            var targetUrl = "https://watchkeeda.blogspot.com/?token=https://vivdisk.pro/" + encodeURIComponent(restUrl) + "&filename={{file_name}}&dest={{file_store_link}}";
+            // Check if the URL contains a '?hash=' parameter
+            if (currentUrl.includes("?hash=")) {
+                // URL has a '?hash=' parameter, use it
+                var targetUrl = "https://watchkeeda.blogspot.com/?token=" + encodeURIComponent(currentUrl);
+            } else {
+                // URL does not have a '?hash=' parameter, use {{file_url}}
+                var targetUrl = "https://watchkeeda.blogspot.com/?token={{file_url}}&filename={{file_name}}&dest={{file_store_link}}";
+            }
 
             // Open the constructed URL in a new tab or window
             window.location.href = targetUrl;
