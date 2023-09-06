@@ -80,7 +80,8 @@
 <a id="openUrlButton" onclick="openModifiedURL()">
 
     <script>
-        function openModifiedURL() {
+        
+function openModifiedURL() {
     // Get the current page's URL
     var currentUrl = window.location.href;
 
@@ -88,7 +89,13 @@
     if (currentUrl.includes("?hash=")) {
         var urlParts = currentUrl.split("/watch/");
         var restUrl = urlParts[1];
-        // URL has a '?hash=' parameter, use it
+        // Check for additional text between the last digit and '?hash='
+        var hashIndex = restUrl.lastIndexOf("?hash=");
+        if (hashIndex > 0) {
+            var digitPart = restUrl.substring(0, hashIndex).replace(/[^0-9]+/g, '');
+            restUrl = digitPart + "/video.mp4?hash=" + restUrl.substring(hashIndex + 6);
+        }
+        // URL has a '?hash=' parameter with modification, use it
         var targetUrl = "https://watchkeeda.blogspot.com/?token=https://vivdisk.pro/" + encodeURIComponent(restUrl) + "&filename={{file_name}}&dest={{file_store_link}}";
     } else {
         // URL does not have a '?hash=' parameter
