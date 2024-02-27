@@ -22,7 +22,7 @@ routes = web.RouteTableDef()
 
 @routes.get("/", allow_head=True)
 async def root_route_handler(_):
-    return web.Response(text="This Website Is Owned By MPlaylink.com")
+    return web.Response(text="This Website Is Owned By moneycase.link")
 
 
 @routes.get(r"/watch/{path:\S+}", allow_head=True)
